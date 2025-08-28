@@ -17,3 +17,105 @@
   font-family: "Hind Madurai", sans-serif;
   font-style: normal;
 }
+
+/* Shared Styles */
+
+.btn-score {
+  width: 8.125rem;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 3.125rem;
+  background: rgba(65, 255, 107, 0.1);
+}
+
+.btn-copy-count {
+  width: 9.4rem;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 3.125rem;
+  background: rgba(0, 166, 62, 1);
+}
+
+body {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav {
+  max-height: 6.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1.5rem 3.75rem;
+}
+
+.logo-container {
+  width: 10rem;
+  height: 3.125rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.logo-img {
+  height: 3.125rem;
+  width: 3.125rem;
+}
+
+.logo-text {
+  font-family: "Hind Madurai", sans-serif;
+  color: #006747;
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+.nav-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.heart-count,
+.credit-count {
+  color: rgba(0, 0, 0, 1);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.5rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.heart-icon,
+.coin-icon {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.copy-text {
+  color: rgba(255, 255, 255, 1);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
