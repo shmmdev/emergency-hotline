@@ -22,6 +22,26 @@
 :root {
   --text-primary: rgba(0, 0, 0, 1);
   --text-secondary: rgba(255, 255, 255, 1);
+  --dark: rgba(17, 17, 17, 1);
+  --gray: rgba(92, 92, 92, 1);
+  --gray-light: rgba(242, 242, 242, 1);
+  --stroke: rgba(212, 214, 213, 1);
+  --green: rgba(0, 166, 62, 1);
+  --red-bg: rgba(255, 227, 226, 1);
+  --blue-bg: rgba(223, 239, 255, 1);
+  --yellow-bg: rgba(255, 255, 0, 1);
+}
+
+.bg-red {
+  background: var(--red-bg);
+}
+
+.bg-blue {
+  background: var(--blue-bg);
+}
+
+.bg-yellow {
+  background: var(--yellow-bg);
 }
 
 .btn-score {
@@ -66,6 +86,7 @@ nav {
   align-items: center;
   margin: 0 auto;
   padding: 1.5rem 3.75rem;
+  border: 5px solid blueviolet;
 }
 
 .logo-container {
@@ -147,7 +168,6 @@ nav {
   width: 5.75rem;
   height: 5.75rem;
   margin: 1.25rem 0 0 0;
-  border: 1px solid goldenrod;
 }
 
 .hero-title {
@@ -161,11 +181,202 @@ nav {
 
 .hero-subtitle {
   color: var(--text-secondary);
-  font-family: Hind Madurai;
-  font-size: 20px;
+  font-family: "Hind Madurai", sans-serif;
+  font-size: 1.25rem;
   font-weight: 600;
-  line-height: 100%;
-  letter-spacing: 0%;
   text-align: center;
   margin: 0 0 1.375rem;
+}
+
+/* Main Section Styles */
+
+.main {
+  max-width: 112.5rem;
+  height: 71.25rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.875rem;
+  padding: 3.5rem 3.625rem;
+  background-color: #f5fff6;
+}
+
+.card-container {
+  max-width: 85.625rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.875rem;
+}
+
+.history-container {
+  width: 25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.card {
+  max-width: 27rem;
+  max-height: 20rem;
+
+  padding: 2rem;
+
+  border-radius: 12px;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+  background: var(--text-secondary);
+}
+
+.card-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+}
+.card-logo {
+  width: 32px;
+}
+
+.card-love-react-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.card-love-react {
+  width: 24px;
+}
+.card-info {
+  margin: 0;
+}
+.card-heading {
+  color: var(--dark);
+  font-family: "Hind Madurai", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.card-text {
+  color: var(--gray);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.phone-number {
+  color: var(--dark);
+  text-decoration: none;
+  margin: 24px 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card-phone-tag-container,
+.card-heading-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.card-tag {
+  color: var(--gray);
+  font-family: "Hind Madurai", sans-serif;
+  font-size: 1.125rem;
+  height: 37px;
+
+  align-self: flex-start;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: undefined;
+  padding: 6px 16px;
+
+  border-radius: 9999px;
+  background: var(--gray-light);
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 1.5rem 0 0;
+}
+
+.btn-copy {
+  height: 40px;
+  width: 50%;
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  background: var(--text-secondary);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.5s ease, background-color 0.5s ease, transform 0.5s ease;
+}
+
+.btn-call {
+  height: 40px;
+  width: 50%;
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  background: var(--green);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: undefined;
+  cursor: pointer;
+  transition: color 0.5s ease, background-color 0.5s ease, transform 0.5s ease;
+}
+
+.btn-call:hover,
+.btn-copy:hover {
+  transform: scale(1.01);
+}
+
+.normal-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.dark-color {
+  color: var(--gray);
+}
+
+.white-color {
+  color: var(--text-secondary);
 }
