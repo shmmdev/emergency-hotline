@@ -263,6 +263,10 @@ nav {
 
 .card-love-react {
   width: 24px;
+  transition: scale 0.3s ease;
+}
+.card-love-react:hover {
+  scale: 1.5;
 }
 .card-info {
   margin: 0;
@@ -365,7 +369,8 @@ nav {
 }
 
 .btn-call:hover,
-.btn-copy:hover {
+.btn-copy:hover,
+.btn-clear-history:hover {
   background-color: var(--gray);
   color: #fff;
   font-weight: bold;
@@ -410,6 +415,7 @@ nav {
   font-size: 16px;
   font-weight: 600;
   text-align: center;
+  transition: color 0.3s ease, background-color 0.3s ease, font-weight 0.3s ease;
 }
 
 .history-cards-container {

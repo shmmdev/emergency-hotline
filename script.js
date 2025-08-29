@@ -22,7 +22,7 @@ const btnClearHistory = document.querySelector(".btn-clear-history");
 // Initialization
 function Init() {
   btnClearHistory.addEventListener("click", clearHistory);
-  //   clearHistory();
+  clearHistory();
 
   //   Add Event Listener to all the heart icons
   for (const heartReactBtn of heartReactionAllBtn) {
@@ -48,9 +48,24 @@ function resetUI() {
   coinCount = 100;
   copyCount = 0;
 
-  heartCountEl.textContent = heartCount;
-  coinCountEl.textContent = coinCount;
-  copyCountEl.textContent = copyCount;
+  updateUI();
+}
+
+// add history function
+function addCallHistory(mainHeading = "", phoneNumber = "", callingTime = "") {
+  // Call history adding
+  if (phoneNumber === "") return;
+  const historyCard = `<div class="history-card">
+                            <div class="call-info">
+                                <h5 class="history-contact-name inter-font">${mainHeading}</h5>
+                                <p class="history-contact-number hind-madurai-font">${phoneNumber}</p>
+                            </div>
+                            <div class="time-container">
+                                <p class="time-text hind-madurai-font">${callingTime}</p>
+                            </div>
+                        </div>`;
+
+  historyCardsContainerEl.insertAdjacentHTML("afterbegin", historyCard);
 }
 
 //  Update UI to current state function
@@ -58,14 +73,11 @@ function updateUI() {
   heartCountEl.textContent = heartCount;
   coinCountEl.textContent = coinCount;
   copyCountEl.textContent = copyCount;
-
-  // Call history adding function
 }
 
 // Clear History Function
 function clearHistory() {
   historyCardsContainerEl.innerHTML = "";
-  resetUI();
 }
 
 // Heart Reaction Function
@@ -82,7 +94,7 @@ function copyNumberToClipboard(copyBtn) {
   copyCount++;
   updateUI();
 
-  alert("📋 Number has been copied to clipboard: " + phoneNumber);
+  showAlert("📋 Number has been copied to clipboard: " + phoneNumber);
 }
 
 // Call an Emergency Number Function
@@ -93,10 +105,34 @@ function callNumber(callBtn) {
     const mainHeading = cardEl.querySelector(".card-heading").textContent;
 
     coinCount -= 20;
-    updateUI();
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
 
-    alert("📞 Calling " + mainHeading + ": " + phoneNumber);
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    hours = hours.toString().padStart(2, "0");
+
+    const callingTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+    updateUI();
+    addCallHistory(mainHeading, phoneNumber, callingTime);
+
+    // console.log(callingTime);
+
+    showAlert("📞 Calling " + mainHeading + ": " + phoneNumber);
+  } else {
+    showAlert("❌ You don't have enough coin to make a call");
   }
+}
+
+// showing alert function
+function showAlert(str) {
+  console.log(str);
+  alert(str);
 }
 
 // Running first time
